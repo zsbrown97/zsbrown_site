@@ -21,19 +21,18 @@ const allwork = (await getCollection("work"))
   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
   .slice(0,SITE.NUM_WORKS_ON_HOMEPAGE);
 
-const work = await Promise.all(
-  allwork.map(async (item) => {
-    const { Content } = await item.render();
-    return { ...item, Content };
-  })
-);
+const latestWork = allwork[0];
+const { Content } = await latestWork.render();
+
+const firstSentence = latestWork.body.split(/(?<=[.!?])\s/)[0];
+const work = { ...latestWork, Content, preview: firstSentence };
 
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
-      Hi, I'm Nano <span class="text-xl">👋🏻</span> 
+      Zack Brown<br />Software Engineer
     </h4>
     <div class="space-y-16">
       <section>
@@ -91,22 +90,22 @@ const work = await Promise.all(
           </Link>
         </div>
         <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
-            <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
-              </div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))}
+
+          <li>
+            <div class="text-sm opacity-75">
+              {dateRange(work.data.dateStart, work.data.dateEnd)}
+            </div>
+            <div class="font-semibold text-black dark:text-white">
+              {work.data.company}
+            </div>
+            <div class="text-sm opacity-75">
+              {work.data.role}
+            </div>
+            <article>
+              {work.preview}
+            </article>
+          </li>
+          
         </ul>
       </section>
 
