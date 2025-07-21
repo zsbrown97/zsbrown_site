@@ -7,7 +7,7 @@ demoURL: "https://stlouiscountymo.gov"
 
 ![St. Louis County Homepage](/slcwebsite_homepage.png)
 
-The [St. Louis County Website](https://stlouiscountymo.gov) is a deceptively large and intricite website. My main goals and contributions were centered around streamlining navigation and improvements to the UI/UX across the site.
+The [St. Louis County Website](https://stlouiscountymo.gov) is a deceptively large and intricate website. My main goals and contributions have been centered around streamlining navigation and general improvements to the UI/UX across the site.
 
 ## Public Notice Postings
 ![Public Notice Page](/slcwebsite_publicNotices.png)

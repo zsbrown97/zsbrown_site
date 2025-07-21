@@ -53,23 +53,7 @@ const work = { ...latestWork, Content, preview: firstSentence };
         </article>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
-          </h5>
-          <Link href="/blog">
-            See all posts
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {blog.map(post => (
-            <li>
-              <ArrowCard entry={post} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
@@ -99,11 +83,30 @@ const work = { ...latestWork, Content, preview: firstSentence };
           
         </ul>
       </section>
+      <section class="animate space-y-6">
 
+     
+        <div class="animate font-semibold text-black dark:text-white">
+          Education
+        </div>
+        <ul class="flex flex-col space-y-4">
+          <li class="animate">
+            <div class="text-sm opacity-75">
+              Aug 2016 - Dec 2020
+            </div>
+            <div class="font-semibold text-black dark:text-white">
+              Missouri University of Science and Technology
+            </div>
+            <div class="text-sm opacity-75">
+              B.S. Information Science and Technology
+            </div>
+          </li>
+        </ul>
+      </section>
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
+            Projects
           </h5>
           <Link href="/projects">
             See all projects
@@ -117,6 +120,26 @@ const work = { ...latestWork, Content, preview: firstSentence };
           ))}
         </ul>
       </section>
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Latest posts
+          </h5>
+          <Link href="/blog">
+            See all posts
+          </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {blog.map(post => (
+            <li>
+              <ArrowCard entry={post} />
+            </li>
+          ))}
+        </ul>
+      </section>
+      
+
+      
 
       <section class="animate space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
